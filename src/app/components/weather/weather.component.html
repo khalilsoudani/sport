@@ -1,0 +1,8 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<form [formGroup]="weatherForm" style="margin: 100px;">
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="city" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="City Name">
+    </div>
+    <button type="submit" (click)="searchWeather()" class="btn btn-primary" style="margin-left: 45%;">Search</button>
+</form>

@@ -1,0 +1,27 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<form #addTeamForm="ngForm" (ngSubmit)="addOrEditTeam()">
+    <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="team.name" [ngModelOptions]="{standalone: true}" id="exampleInputName" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputNumber">Foundation</label>
+        <input type="number" class="form-control" [(ngModel)]="team.foundation" [ngModelOptions]="{standalone: true}" id="exampleInputNumber" aria-describedby="emailHelp">
+      </div>
+    <div class="form-group">
+      <label for="exampleInputPost">Country</label>
+      <input type="text" class="form-control" [(ngModel)]="team.country" [ngModelOptions]="{standalone: true}" id="exampleInputPost" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPost">Stadium</label>
+      <input type="text" class="form-control" [(ngModel)]="team.stadium" [ngModelOptions]="{standalone: true}" id="exampleInputPost" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group mt-4" style="text-align: center;">
+      <button class="btn btn-success" type="button" (click)="filePicker.click()">Select Team Logo</button>
+    </div>
+    <img [src]="imagePreview" *ngIf="imagePreview" height="150px" width="150px" alt="" style="margin-left: 110px;">
+    <div class="form-group" style="visibility: hidden;">
+      <input type="file" class="form-control" #filePicker (change)='onImageSelected($event)'>
+    </div>
+    <button type="submit" class="btn btn-primary">{{bannerDetails.title}}</button>
+</form>
